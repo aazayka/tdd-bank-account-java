@@ -13,4 +13,11 @@ public class AccountTest {
         Account account = new Account();
         assertThat(account.balance()).isCloseTo(0.0, Offset.offset(0.001));
     }
+
+    @Test
+    void deposidShouldIncreaseTheBalance() {
+        Account account = new Account();
+        account.deposit(10.);
+        assertThat(account.balance()).isCloseTo(10., Offset.offset(0.001));
+    }
 }
